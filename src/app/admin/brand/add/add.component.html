@@ -1,0 +1,18 @@
+<form [formGroup]="brandForm" (ngSubmit)="add(brandForm)">
+    <h3>Add Brand</h3>
+    <p class=".has-error">{{error}}</p>
+    <label>Brand Name:
+        <input type="text" formControlName="storeName" class="form-control">
+    </label> <br>
+    <label>Brand Code:
+        <input type="text" formControlName="storeCode" class="form-control">
+    </label> <br>
+    <label>Brand Status:
+        <select formControlName="storeStatus" class="form-control">
+            <option value="">Select Status</option>
+            <option value="Active">Active</option>
+            <option value="InActive">InActive</option>
+        </select>
+    </label> <br>
+    <button type="submit" [disabled]="!brandForm.valid && disbleSubmitButton">Add +</button>
+</form>

@@ -1,0 +1,20 @@
+<p>Brands</p>
+<a routerLink="/brand/add">Create Brand +</a>
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+    <thead>
+      <tr>
+        <th>Store Name</th>
+        <th>Store Status</th>
+        <th>Created Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let brand of brands">
+        <td>{{ brand.storeName }}</td>
+        <td>{{ brand.storeStatus }}</td>
+        <td>{{ brand.created_date }}</td>
+        <td><a [routerLink]="['/brand/edit',brand._id]">Edit</a></td>
+      </tr>
+    </tbody>
+</table>
